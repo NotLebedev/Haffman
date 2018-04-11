@@ -68,7 +68,12 @@ public class EmptyNode implements Node {
 
     @Override
     public void recacheSelfCode() {
+
         selfCode = null;
+
+        child0.recacheSelfCode();
+        child1.recacheSelfCode();
+
     }
 
     @Override
