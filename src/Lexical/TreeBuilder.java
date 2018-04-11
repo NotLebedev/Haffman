@@ -5,11 +5,11 @@ import java.util.Collections;
 
 public class TreeBuilder {
 
-    private ArrayList<Node> nodes;
+    public LexicalTree buildTree(ArrayList<CharacterNode> input) {
 
-    public Node buildTree(ArrayList<Node> input) {
+        ArrayList<Node> nodes = new ArrayList<>();
 
-        nodes = input;
+        nodes.addAll(input);
         Collections.sort(nodes);
 
         while (nodes.size() > 1) {
@@ -33,7 +33,9 @@ public class TreeBuilder {
 
         }
 
-        return nodes.get(0);
+        LexicalTree lexicalTree = new LexicalTree(nodes.get(0), input);
+
+        return lexicalTree;
 
     }
 

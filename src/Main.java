@@ -1,6 +1,4 @@
-import Lexical.CharacterNode;
-import Lexical.Node;
-import Lexical.TreeBuilder;
+import Lexical.*;
 
 import java.util.ArrayList;
 
@@ -39,46 +37,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*ArrayList<Lexical.Node> chars = new ArrayList<>();
-
-        chars.add(new Lexical.CharacterNode('b', 3));
-        chars.add(new Lexical.CharacterNode('e', 4));
-        chars.add(new Lexical.CharacterNode('p', 2));
-        chars.add(new Lexical.CharacterNode(' ', 2));
-        chars.add(new Lexical.CharacterNode('o', 2));
-        chars.add(new Lexical.CharacterNode('r', 1));
-        chars.add(new Lexical.CharacterNode('!', 1));
-
-        ArrayList<Lexical.Node> nodes = new ArrayList<>();
-
-        nodes.addAll(chars);
-
-        for (Lexical.Node node : nodes) {
-            System.out.println(node.toString());
-        }
-
-        Lexical.TreeBuilder treeBuilder = new Lexical.TreeBuilder();
-
-        Lexical.Node tree = treeBuilder.buildTree(nodes);
-
-        System.out.println(tree.toString());
-
-        for (Lexical.Node aChar : chars) {
-
-            ArrayList<Boolean> code = ((Lexical.CharacterNode)aChar).getSelfCode();
-
-            System.out.print(((Lexical.CharacterNode) aChar).getSymbol() + " : ");
-
-            for (Boolean aBoolean : code) {
-
-                System.out.print(aBoolean ? "1" : "0");
-
-            }
-
-            System.out.println();
-
-        }*/
-
         String initial = "Вечер Анны Павловны был пущен." +
                 " Веретена с разных сторон равномерно и не " +
                 "умолкая шумели. Кроме ma tante, около которой " +
@@ -92,65 +50,24 @@ public class Main {
 
         ArrayList<CharacterNode> chars = count(initial);
 
-        for(CharacterNode node : chars) {
-            System.out.println(node.toString());
-        }
-
-        ArrayList<Node> nodes = new ArrayList<>();
-
-        nodes.addAll(chars);
-
-        for (Node node : nodes) {
-            System.out.println(node.toString());
-        }
-
         TreeBuilder treeBuilder = new TreeBuilder();
 
-        Node tree = treeBuilder.buildTree(nodes);
+        LexicalTree lt = treeBuilder.buildTree(chars);
 
-        System.out.println(tree.toString());
+        ArrayList<Boolean> compressed = Compressor.compress(lt, initial);
 
-        Integer totalLength = 0;
+        for (Boolean aBoolean : compressed) {
 
-        for (Node aChar : chars) {
-
-            ArrayList<Boolean> code = ((CharacterNode)aChar).getSelfCode();
-
-            System.out.print(((CharacterNode) aChar).getSymbol() + " : ");
-
-            for (Boolean aBoolean : code) {
-
-                System.out.print(aBoolean ? "1" : "0");
-
-            }
-
-            System.out.println();
-
-            totalLength += code.size() * aChar.getWeight();
+            System.out.print(aBoolean ? "1" : "0");
 
         }
 
-        System.out.println("Initial length was : " + initial.length() * 8 + " bits, after compression : " + totalLength + " bits");
+        System.out.println();
 
-        /*Lexical.Node obj = new Lexical.CharacterNode('f', 3);
+        String str = Compressor.decompress(lt, compressed);
 
-        int index = Collections.binarySearch(nodes, obj);
+        System.out.println(str);
 
-        System.out.println("Found at index " + index);
-
-        if(index >= 0) {
-
-            nodes.add(index, obj);
-
-        }else {
-
-            nodes.add(-(index + 1), obj);
-
-        }
-
-        for (Lexical.Node node : nodes) {
-            System.out.println(node.toString());
-        }*/
 
     }
 }

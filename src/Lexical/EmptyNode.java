@@ -41,6 +41,10 @@ public class EmptyNode implements Node {
         this.parent = parent;
     }
 
+    public Node getChild(Boolean childNum) {
+        return childNum ? child1 : child0;
+    }
+
     @Override
     public ArrayList<Boolean> getSelfCode(Node self) {
 
