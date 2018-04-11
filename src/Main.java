@@ -1,6 +1,6 @@
-import LexicalTree.CharacterNode;
-import LexicalTree.Node;
-import LexicalTree.TreeBuilder;
+import Lexical.CharacterNode;
+import Lexical.Node;
+import Lexical.TreeBuilder;
 
 import java.util.ArrayList;
 
@@ -39,35 +39,35 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*ArrayList<LexicalTree.Node> chars = new ArrayList<>();
+        /*ArrayList<Lexical.Node> chars = new ArrayList<>();
 
-        chars.add(new LexicalTree.CharacterNode('b', 3));
-        chars.add(new LexicalTree.CharacterNode('e', 4));
-        chars.add(new LexicalTree.CharacterNode('p', 2));
-        chars.add(new LexicalTree.CharacterNode(' ', 2));
-        chars.add(new LexicalTree.CharacterNode('o', 2));
-        chars.add(new LexicalTree.CharacterNode('r', 1));
-        chars.add(new LexicalTree.CharacterNode('!', 1));
+        chars.add(new Lexical.CharacterNode('b', 3));
+        chars.add(new Lexical.CharacterNode('e', 4));
+        chars.add(new Lexical.CharacterNode('p', 2));
+        chars.add(new Lexical.CharacterNode(' ', 2));
+        chars.add(new Lexical.CharacterNode('o', 2));
+        chars.add(new Lexical.CharacterNode('r', 1));
+        chars.add(new Lexical.CharacterNode('!', 1));
 
-        ArrayList<LexicalTree.Node> nodes = new ArrayList<>();
+        ArrayList<Lexical.Node> nodes = new ArrayList<>();
 
         nodes.addAll(chars);
 
-        for (LexicalTree.Node node : nodes) {
+        for (Lexical.Node node : nodes) {
             System.out.println(node.toString());
         }
 
-        LexicalTree.TreeBuilder treeBuilder = new LexicalTree.TreeBuilder();
+        Lexical.TreeBuilder treeBuilder = new Lexical.TreeBuilder();
 
-        LexicalTree.Node tree = treeBuilder.buildTree(nodes);
+        Lexical.Node tree = treeBuilder.buildTree(nodes);
 
         System.out.println(tree.toString());
 
-        for (LexicalTree.Node aChar : chars) {
+        for (Lexical.Node aChar : chars) {
 
-            ArrayList<Boolean> code = ((LexicalTree.CharacterNode)aChar).getSelfCode();
+            ArrayList<Boolean> code = ((Lexical.CharacterNode)aChar).getSelfCode();
 
-            System.out.print(((LexicalTree.CharacterNode) aChar).getSymbol() + " : ");
+            System.out.print(((Lexical.CharacterNode) aChar).getSymbol() + " : ");
 
             for (Boolean aBoolean : code) {
 
@@ -132,7 +132,7 @@ public class Main {
 
         System.out.println("Initial length was : " + initial.length() * 8 + " bits, after compression : " + totalLength + " bits");
 
-        /*LexicalTree.Node obj = new LexicalTree.CharacterNode('f', 3);
+        /*Lexical.Node obj = new Lexical.CharacterNode('f', 3);
 
         int index = Collections.binarySearch(nodes, obj);
 
@@ -148,7 +148,7 @@ public class Main {
 
         }
 
-        for (LexicalTree.Node node : nodes) {
+        for (Lexical.Node node : nodes) {
             System.out.println(node.toString());
         }*/
 

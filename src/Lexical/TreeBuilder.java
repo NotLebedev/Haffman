@@ -1,4 +1,4 @@
-package LexicalTree;
+package Lexical;
 
 import java.util.ArrayList;
 import java.util.Collections;

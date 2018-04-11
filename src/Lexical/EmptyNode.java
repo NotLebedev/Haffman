@@ -1,4 +1,4 @@
-package LexicalTree;
+package Lexical;
 
 import java.util.ArrayList;
 
@@ -91,7 +91,7 @@ public class EmptyNode implements Node {
 
     @Override
     public String toString() {
-        return "LexicalTree.EmptyNode{" +
+        return "Lexical.EmptyNode{" +
                 "weight=" + weight +
                 '}';
     }

@@ -1,4 +1,4 @@
-package LexicalTree;
+package Lexical;
 
 import java.util.ArrayList;
 
@@ -93,7 +93,7 @@ public class CharacterNode implements Node {
 
     @Override
     public String toString() {
-        return "LexicalTree.CharacterNode{" +
+        return "Lexical.CharacterNode{" +
                 "weight=" + weight +
                 ", symbol='" + symbol +
                 "'}";
