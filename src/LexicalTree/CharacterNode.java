@@ -1,3 +1,5 @@
+package LexicalTree;
+
 import java.util.ArrayList;
 
 public class CharacterNode implements Node {
@@ -21,7 +23,7 @@ public class CharacterNode implements Node {
         this.weight = weight;
     }
 
-    public void incrementWieght() {
+    public void incrementWeight() {
 
         weight ++;
 
@@ -91,7 +93,7 @@ public class CharacterNode implements Node {
 
     @Override
     public String toString() {
-        return "CharacterNode{" +
+        return "LexicalTree.CharacterNode{" +
                 "weight=" + weight +
                 ", symbol='" + symbol +
                 "'}";

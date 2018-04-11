@@ -1,3 +1,5 @@
+package LexicalTree;
+
 import java.util.ArrayList;
 
 public interface Node extends Comparable<Node> {

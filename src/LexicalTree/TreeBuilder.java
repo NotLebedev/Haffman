@@ -1,3 +1,5 @@
+package LexicalTree;
+
 import java.util.ArrayList;
 import java.util.Collections;
 

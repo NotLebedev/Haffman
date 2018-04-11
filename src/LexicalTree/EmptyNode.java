@@ -1,5 +1,6 @@
+package LexicalTree;
+
 import java.util.ArrayList;
-import java.util.BitSet;
 
 public class EmptyNode implements Node {
 
@@ -85,7 +86,7 @@ public class EmptyNode implements Node {
 
     @Override
     public String toString() {
-        return "EmptyNode{" +
+        return "LexicalTree.EmptyNode{" +
                 "weight=" + weight +
                 '}';
     }
