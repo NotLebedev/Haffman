@@ -13,7 +13,6 @@ public class CharacterNode implements Node {
 
         this.weight = weight;
 
-        this.parent = parent;
         this.symbol = symbol;
 
     }
@@ -63,6 +62,11 @@ public class CharacterNode implements Node {
 
         }
 
+    }
+
+    @Override
+    public void recacheSelfCode() {
+        selfCode = null;
     }
 
     @Override

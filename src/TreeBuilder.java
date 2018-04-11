@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class TreeBuilder {
 
-    ArrayList<Node> nodes;
+    private ArrayList<Node> nodes;
 
     public Node buildTree(ArrayList<Node> input) {
 

@@ -66,6 +66,11 @@ public class EmptyNode implements Node {
     }
 
     @Override
+    public void recacheSelfCode() {
+        selfCode = null;
+    }
+
+    @Override
     public int compareTo(Node o) {
 
         if(((Node)o).getWeight() > this.weight) {

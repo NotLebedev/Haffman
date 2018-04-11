@@ -8,6 +8,7 @@ public interface Node extends Comparable<Node> {
     void setParent(Node parent);
 
     ArrayList<Boolean> getSelfCode(Node self);
+    void recacheSelfCode();
 
     @Override
     int compareTo(Node o);
