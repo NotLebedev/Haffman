@@ -42,14 +42,18 @@ public class EmptyNode implements Node {
 
     @Override
     public ArrayList<Boolean> getSelfCode(Node self) {
-        
-        ArrayList<Boolean> code;
 
-        if (parent == null) {
-            code = new ArrayList<>();
-        } else {
-            code = parent.getSelfCode(this);
+        if(selfCode == null) {
+
+            if (parent == null) {
+                selfCode = new ArrayList<>();
+            } else {
+                selfCode = parent.getSelfCode(this);
+            }
+
         }
+
+        ArrayList<Boolean> code = new ArrayList<>(selfCode);
 
         if (self == child0) {
             code.add(false);

@@ -5,6 +5,7 @@ public class CharacterNode implements Node {
     private Integer weight;
 
     private Node parent;
+    private ArrayList<Boolean> selfCode;
 
     private Character symbol;
 
@@ -53,7 +54,13 @@ public class CharacterNode implements Node {
         if(parent == null) {
             return null;
         }else {
-            return parent.getSelfCode(this);
+
+            if(selfCode == null) {
+                selfCode = parent.getSelfCode(this);
+            }
+
+            return new ArrayList<>(selfCode);
+
         }
 
     }
