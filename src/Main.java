@@ -4,37 +4,6 @@ import java.util.ArrayList;
 
 public class Main {
 
-    private static ArrayList<CharacterNode> count(String str) {
-
-        ArrayList<CharacterNode> chars = new ArrayList<>();
-
-        for (char c : str.toCharArray()) {
-
-            CharacterNode symbol = null;
-
-            for (CharacterNode node : chars) {
-
-                if(node.getSymbol().compareTo(c) == 0){
-
-                    symbol = node;
-                    break;
-
-                }
-
-            }
-
-            if(symbol == null) {
-                chars.add(new CharacterNode(c, 1));
-            }else {
-                symbol.incrementWeight();
-            }
-
-        }
-
-        return chars;
-
-    }
-
     public static void main(String[] args) {
 
         String initial = "Вечер Анны Павловны был пущен." +
@@ -48,11 +17,7 @@ public class Main {
                 "румяная, слишком полная по своей молодости, маленькая " +
                 "княгиня Болконская. В третьем — Мортемар и Анна Павловна.";
 
-        ArrayList<CharacterNode> chars = count(initial);
-
-        TreeBuilder treeBuilder = new TreeBuilder();
-
-        LexicalTree lt = treeBuilder.buildTree(chars);
+        LexicalTree lt = TreeBuilder.buildTree(initial);
 
         ArrayList<Boolean> compressed = Compressor.compress(lt, initial);
 

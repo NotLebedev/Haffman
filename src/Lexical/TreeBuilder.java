@@ -5,7 +5,40 @@ import java.util.Collections;
 
 public class TreeBuilder {
 
-    public LexicalTree buildTree(ArrayList<CharacterNode> input) {
+    private static ArrayList<CharacterNode> count(String str) {
+
+        ArrayList<CharacterNode> chars = new ArrayList<>();
+
+        for (char c : str.toCharArray()) {
+
+            CharacterNode symbol = null;
+
+            for (CharacterNode node : chars) {
+
+                if(node.getSymbol().compareTo(c) == 0){
+
+                    symbol = node;
+                    break;
+
+                }
+
+            }
+
+            if(symbol == null) {
+                chars.add(new CharacterNode(c, 1));
+            }else {
+                symbol.incrementWeight();
+            }
+
+        }
+
+        return chars;
+
+    }
+
+    public static LexicalTree buildTree(String str) {
+
+        ArrayList<CharacterNode> input = count(str);
 
         ArrayList<Node> nodes = new ArrayList<>();
 
