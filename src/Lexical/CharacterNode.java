@@ -40,6 +40,11 @@ public class CharacterNode implements Node {
     }
 
     @Override
+    public Node getParent() {
+        return parent;
+    }
+
+    @Override
     public ArrayList<Boolean> getSelfCode(Node self) {
 
         if(parent == null) {

@@ -3,7 +3,7 @@ package Lexical;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class TreeBuilder {
+public class StaticTreeBuilder {
 
     private static ArrayList<CharacterNode> count(String str) {
 
@@ -36,13 +36,20 @@ public class TreeBuilder {
 
     }
 
-    public static LexicalTree buildTree(String str) {
+    public static StaticLexicalTree buildTree(String str) {
 
         ArrayList<CharacterNode> input = count(str);
 
         ArrayList<Node> nodes = new ArrayList<>();
 
         nodes.addAll(input);
+
+        return new StaticLexicalTree(buildTree(nodes), input);
+
+    }
+
+    static Node buildTree(ArrayList<Node> nodes) {
+
         Collections.sort(nodes);
 
         while (nodes.size() > 1) {
@@ -66,9 +73,8 @@ public class TreeBuilder {
 
         }
 
-        LexicalTree lexicalTree = new LexicalTree(nodes.get(0), input);
 
-        return lexicalTree;
+        return nodes.get(0);
 
     }
 

@@ -41,8 +41,23 @@ public class EmptyNode implements Node {
         this.parent = parent;
     }
 
+    @Override
+    public Node getParent() {
+        return parent;
+    }
+
     public Node getChild(Boolean childNum) {
         return childNum ? child1 : child0;
+    }
+
+    public void setChild(Boolean childNum, Node child) {
+
+        if(childNum) {
+            child1 = child;
+        }else {
+            child0 = child;
+        }
+
     }
 
     @Override

@@ -8,6 +8,7 @@ public interface Node extends Comparable<Node> {
     void updateWeight();
 
     void setParent(Node parent);
+    Node getParent();
 
     ArrayList<Boolean> getSelfCode(Node self);
     void recacheSelfCode();
